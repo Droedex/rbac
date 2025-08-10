@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Droedex\RBAC\utils;
 
-use Droedex\RBAC\comands\RbacInstallCommand;
+use Droedex\RBAC\console\RbacInstallCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -12,9 +12,15 @@ class Installer
 {
     public static function install(): void
     {
-        echo "🔧 RBAC installing...\n";
+        $commandClassList = require __DIR__ . '/rbac-install.php';
 
-        $command = new RbacInstallCommand();
+        $commands = [];
+
+        foreach ($commandClassList as $commandClass) {
+            $commands[] = InstallerFactory::create($commandClass);
+        }
+
+        $command = new RbacInstallCommand($commands);
         $command->setLaravel(app());
 
         $input = new ArrayInput([]);
