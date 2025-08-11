@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 
 class Installer
 {
-    public static function install(): void
+    public static function run(): void
     {
         $commandClassList = require __DIR__ . '/rbac-install.php';
 
@@ -27,5 +27,7 @@ class Installer
         $output = new ConsoleOutput();
 
         $command->run($input, $output);
+
+        exit;
     }
 }
