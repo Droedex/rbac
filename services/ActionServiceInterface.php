@@ -2,7 +2,7 @@
 
 namespace Droedex\RBAC\services;
 
-interface InstallServiceInterface
+interface ActionServiceInterface
 {
     public function getTaskTitle(): string;
     public function run(): string;

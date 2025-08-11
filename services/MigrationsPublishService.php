@@ -6,7 +6,7 @@ namespace Droedex\RBAC\services;
 
 use Illuminate\Support\Facades\File;
 
-class MigrationsPublishService implements InstallServiceInterface
+class MigrationsPublishService implements ActionServiceInterface
 {
     private string $title = 'publishing migrations ...';
 
@@ -46,6 +46,8 @@ class MigrationsPublishService implements InstallServiceInterface
             return 'All migrations already exist. Skipping...';
         }
 
-        return ' Published migrations: ' . "\n" . implode(PHP_EOL, $published);
+        $items = array_map(fn($file) => "- 📄 $file", $published);
+
+        return ' Published migrations: 📂' . "\n" . implode("\n", $items);
     }
 }

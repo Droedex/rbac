@@ -6,7 +6,7 @@ namespace Droedex\RBAC\services;
 
 use Illuminate\Support\Facades\File;
 
-class ConfigPublishService implements InstallServiceInterface
+class ConfigPublishService implements ActionServiceInterface
 {
     private string $title = 'publishing config ...';
 
@@ -25,11 +25,13 @@ class ConfigPublishService implements InstallServiceInterface
         }
 
         if (File::exists($configDest)) {
-            return 'Config already exists. Skipping...';
+            return ' Config already exists. Skipping...';
         }
 
         File::copy($configSource, $configDest);
 
-        return ' Config published';
+        return ' Config published' . "\n" .
+            '    📄 From: ' . $configSource . "\n" .
+            '    📂 To:   ' . $configDest;;
     }
 }

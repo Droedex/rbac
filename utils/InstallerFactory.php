@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Droedex\RBAC\utils;
 
-use Droedex\RBAC\services\InstallServiceInterface;
+use Droedex\RBAC\services\ActionServiceInterface;
 
 class InstallerFactory
 {
-    public static function create(string $class): InstallServiceInterface
+    public static function create(string $class): ActionServiceInterface
     {
         $instance = app()->make($class);
 
-        if (!$instance instanceof InstallServiceInterface) {
+        if (!$instance instanceof ActionServiceInterface) {
             throw new \InvalidArgumentException(
                 "{$class} must implement installCommandInterface"
             );
