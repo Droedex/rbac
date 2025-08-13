@@ -14,14 +14,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rbac_role_resource_permissions', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('role_id');
-            $table->unsignedBigInteger('resource_id');
-            $table->boolean('create')->default(0);
-            $table->boolean('read')->default(0);
-            $table->boolean('update')->default(0);
-            $table->boolean('delete')->default(0);
-            $table->boolean('list')->default(0);
+            $table->unsignedSmallInteger('id', true);
+            $table->unsignedSmallInteger('role_id');
+            $table->unsignedSmallInteger('resource_id');
+            $table->string('permissions', 5)->default(0);
             $table->unique(['role_id', 'resource_id']);
             $table->timestamps();
         });

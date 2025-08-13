@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rbac_roles', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedSmallInteger('id', true);
             $table->string('name')->unique();
             $table->timestamps();
         });

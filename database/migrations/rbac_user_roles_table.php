@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rbac_resources', function (Blueprint $table) {
-            $table->unsignedSmallInteger('id', true);
-            $table->string('name')->unique();
+        Schema::create('rbac_user_roles', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id')->index();
+            $table->unsignedSmallInteger('role_id')->index();
             $table->timestamps();
+
+            $table->index(['user_id', 'role_id'], 'user_role');
         });
     }
 
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rbac_resources');
+        Schema::dropIfExists('rbac_user_roles');
     }
 };
