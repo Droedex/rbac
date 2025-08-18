@@ -14,12 +14,20 @@ class RbacDefaultSeeds extends Seeder
 
     public function run(): void
     {
-        DB::table('rbac_roles')->insert([
+        /**  slug  @see  \Illuminate\Database\Schema\ColumnDefinition::unique  */
+        $roleId = DB::table('rbac_roles')->insertGetId([
             'slug' => 'admin',
         ]);
 
-        DB::table('rbac_resources')->insert([
-            'slug' => 'user',
+        /**  slug  @see  \Illuminate\Database\Schema\ColumnDefinition::unique  */
+        $unitId =  DB::table('rbac_units')->insertGetId([
+            'slug' => 'users',
+        ]);
+
+        DB::table('rbac_role_unit_permissions')->insert([
+            'role_id' => $roleId,
+            'unit_id' => $unitId,
+            'permissions' => '1111',
         ]);
     }
 }
