@@ -1,6 +1,6 @@
 <?php
 
-namespace Droedex\RBAC\services;
+namespace Droedex\RBAC\services\Actions;
 
 interface ActionServiceInterface
 {

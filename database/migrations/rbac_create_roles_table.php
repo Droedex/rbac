@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rbac_roles', function (Blueprint $table) {
             $table->unsignedSmallInteger('id', true);
-            $table->string('name')->unique();
+            $table->string('slug', 32)->unique();
             $table->timestamps();
         });
     }
