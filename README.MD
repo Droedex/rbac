@@ -28,3 +28,10 @@ Run migrations
 ```shell
 php artisan migrate
 ```
+
+Run setup command for make Admin role and unit Users
+
+```shell
+php artisan tinker
+>>> \Droedex\RBAC\Utils\Setup::run()
+```

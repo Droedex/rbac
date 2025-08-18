@@ -17,7 +17,7 @@ class MigrationsPublishService implements ActionServiceInterface
 
     public function run(): string
     {
-        $sourceDir = dirname(__DIR__, 1) . '/database/migrations';
+        $sourceDir = dirname(__DIR__, 2) . '/database/migrations';
         $destDir = database_path('migrations');
 
         if (!$sourceDir || !File::exists($sourceDir)) {

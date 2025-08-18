@@ -17,7 +17,7 @@ class ConfigPublishService implements ActionServiceInterface
 
     public function run(): string
     {
-        $configSource = dirname(__DIR__, 1) . '/config/rbac.php';
+        $configSource = dirname(__DIR__, 2) . '/config/rbac.php';
         $configDest = config_path('rbac.php');
 
         if (!$configSource || !File::exists($configSource)) {

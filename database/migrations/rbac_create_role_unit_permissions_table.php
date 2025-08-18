@@ -8,12 +8,17 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * No foreign keys — handled by domain logic
      */
     public function up(): void
     {
-        Schema::create('rbac_resources', function (Blueprint $table) {
+        Schema::create('rbac_role_unit_permissions', function (Blueprint $table) {
             $table->unsignedSmallInteger('id', true);
-            $table->string('slug', 32)->unique();
+            $table->unsignedSmallInteger('role_id');
+            $table->unsignedSmallInteger('unit_id');
+            $table->string('permissions', 4)->comment('CRUD');
+            $table->unique(['role_id', 'unit_id']);
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rbac_resources');
+        Schema::dropIfExists('rbac_role_resource_permissions');
     }
 };
