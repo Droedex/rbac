@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Droedex\RBAC\services;
+namespace Droedex\RBAC\services\Actions;
 
 use Illuminate\Support\Facades\File;
 

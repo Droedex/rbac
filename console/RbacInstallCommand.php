@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Droedex\RBAC\console;
 
-use Droedex\RBAC\services\ActionServiceInterface;
+use Droedex\RBAC\services\Actions\ActionServiceInterface;
 use Illuminate\Console\Command;
 
 class RbacInstallCommand extends Command

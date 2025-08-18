@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Droedex\RBAC\utils;
 
-use Droedex\RBAC\services\ActionServiceInterface;
+use Droedex\RBAC\services\Actions\ActionServiceInterface;
 
 class InstallerFactory
 {
