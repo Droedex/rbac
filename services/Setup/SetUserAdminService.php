@@ -6,7 +6,7 @@ namespace Droedex\RBAC\services\Setup;
 
 use Illuminate\Support\Facades\DB;
 
-class SetUserAdminService
+final class SetUserAdminService
 {
     public static function setAdmin(int $id): void
     {

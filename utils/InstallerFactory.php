@@ -6,7 +6,7 @@ namespace Droedex\RBAC\utils;
 
 use Droedex\RBAC\services\Actions\ActionServiceInterface;
 
-class InstallerFactory
+final class InstallerFactory
 {
     public static function create(string $class): ActionServiceInterface
     {

@@ -7,7 +7,7 @@ namespace Droedex\RBAC\console;
 use Droedex\RBAC\services\Actions\ActionServiceInterface;
 use Illuminate\Console\Command;
 
-class RbacInstallCommand extends Command
+final class RbacInstallCommand extends Command
 {
     protected $signature = 'rbac:install';
     protected $description = 'Publish config and routes for rbac';

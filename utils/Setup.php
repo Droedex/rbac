@@ -8,7 +8,7 @@ use Droedex\RBAC\console\RbacSetupCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class Setup
+final class Setup
 {
     public static function run(): void
     {

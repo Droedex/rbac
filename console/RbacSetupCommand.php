@@ -8,7 +8,7 @@ use Droedex\RBAC\services\Setup\SetDefaultsService;
 use Droedex\RBAC\services\Setup\SetUserAdminService;
 use Illuminate\Console\Command;
 
-class RbacSetupCommand extends Command
+final class RbacSetupCommand extends Command
 {
     protected $signature = 'rbac:setup-dev';
     protected $description = 'Performs interactive setup of RBAC for the development environment.';
