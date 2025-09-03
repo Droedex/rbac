@@ -6,7 +6,7 @@ namespace Droedex\RBAC\services\Actions;
 
 use Illuminate\Support\Facades\File;
 
-class MigrationsPublishService implements ActionServiceInterface
+final class MigrationsPublishService implements ActionServiceInterface
 {
     private string $title = 'publishing migrations ...';
 

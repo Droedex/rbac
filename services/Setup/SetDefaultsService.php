@@ -7,7 +7,7 @@ namespace Droedex\RBAC\services\Setup;
 use Droedex\RBAC\database\seeders\RbacDefaultSeeds;
 use Illuminate\Support\Facades\DB;
 
-class SetDefaultsService
+final class SetDefaultsService
 {
     public static function seed(): void
     {

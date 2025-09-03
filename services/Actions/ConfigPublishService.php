@@ -6,7 +6,7 @@ namespace Droedex\RBAC\services\Actions;
 
 use Illuminate\Support\Facades\File;
 
-class ConfigPublishService implements ActionServiceInterface
+final class ConfigPublishService implements ActionServiceInterface
 {
     private string $title = 'publishing config ...';
 

@@ -8,7 +8,7 @@ use Droedex\RBAC\console\RbacInstallCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class Installer
+final class Installer
 {
     public static function run(): void
     {
